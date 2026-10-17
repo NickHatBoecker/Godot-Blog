@@ -1,0 +1,40 @@
+/*
+Theme Name: Goat Script V1
+Author: NickHatBoecker
+Author URI: https://nickhatboecker.de
+Text Domain: goatscript
+Domain Path: /languages
+*/
+
+@import url('./assets/app.css');
+@import url('./assets/detail.css');
+
+.u-position-relative {
+    position: relative;
+}
+
+.wcag-link:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+}
+
+.intro {
+    margin-bottom: 24px;
+}
+
+.compare-card__link:hover, .compare-card__link:active {
+    color: var(--accent-strong) !important;
+}
+
+.language-button[disabled] {
+    opacity: 0.6;
+
+    &:hover {
+        color: var(--muted);
+        border-color: var(--line) !important;
+    }
+}

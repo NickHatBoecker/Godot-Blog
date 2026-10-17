@@ -1,0 +1,8 @@
+/data/*
+!/data/wp
+/data/wp/*
+!/data/wp/wp-content
+/data/wp/wp-content/*
+!/data/wp/wp-content/themes
+/data/wp/wp-content/themes/*
+!/data/wp/wp-content/themes/goatscript_v1
