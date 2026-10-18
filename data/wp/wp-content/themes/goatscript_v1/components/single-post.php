@@ -1,7 +1,7 @@
 <?php
 $categories = get_the_category();
 $category = null;
-if (count($categories) && ! in_array($categories[0]->term_id, [1, 7])) {
+if (count($categories) && ! in_array($categories[0]->term_id, GENERAL_CATEGORIES)) {
     $category = $categories[0];
 }
 ?>

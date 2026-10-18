@@ -3,7 +3,7 @@
 <?php echo get_template_part('components/hero'); ?>
 
 <div class="content-grid">
-    <section id="notizen" aria-labelledby="notes-title">
+    <section>
         <div class="section-heading">
             <div>
                 <div class="eyebrow"><?php pll_e('Lass dich inspirieren'); ?></div>
@@ -11,9 +11,15 @@
         </div>
         <div class="post-list" id="postList">
             <?php
-            if (have_posts()):
-                while (have_posts()):
-                    the_post();
+            $query = new WP_Query([
+                'post_type' => 'post',
+                'posts_per_page' => 5,
+                'orderby' => 'date',
+                'order' => 'DESC',
+            ]);
+            if ($query->have_posts()):
+                while ($query->have_posts()):
+                    $query->the_post();
                     get_template_part('components/list-item-post');
                 endwhile;
             endif;

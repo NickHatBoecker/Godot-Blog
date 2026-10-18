@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <header class="article-intro" aria-labelledby="article-title">
-    <?php echo get_template_part('components/single_meta'); ?>
+    <h1 id="article-title"><?php echo get_the_title(); ?></h1>
 </header>
 
 <div class="article-layout">

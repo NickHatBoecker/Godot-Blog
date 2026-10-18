@@ -18,71 +18,38 @@
             <span>GoatScript</span>
         </a>
 
-        <?php
-        $menuTranslations = [
-            'menuOpen'  => pll__('Menü öffnen'),
-            'menuClose' => pll__('Menü schließen'),
-        ];
-        ?>
-        <div data-translations="<?php echo htmlentities(json_encode($menuTranslations)); ?>">
+        <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
             <?php
-            wp_nav_menu([
-                'theme_location' => 'main_menu',
-                'container'      => 'nav',
-                'menu_class'     => 'main-nav',
-            ]);
+            $menuTranslations = [
+                'menuOpen'  => pll__('Menü öffnen'),
+                'menuClose' => pll__('Menü schließen'),
+            ];
             ?>
-        </div>
+            <div class="js-main-nav-translations" data-translations="<?php echo htmlentities(json_encode($menuTranslations)); ?>" style="width: 100%;">
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'main_menu',
+                    'container'      => 'nav',
+                    'menu_class'     => 'main-navigation',
+                ]);
+                ?>
+            </div>
+
+            <div class="mobile-menu-controls" role="group" aria-label="Menüeinstellungen">
+                <?php echo get_template_part('components/language_switch'); ?>
+                <?php echo get_template_part('components/theme_toggle'); ?>
+            </div>
+        </nav>
 
         <div class="utility-actions">
-            <?php
-            $languageSwitchLink = LanguageSwitcher::getLanguageSwitchLink();
-            if ($languageSwitchLink['disabled']):
-                ?>
-                <button disabled lang="<?php echo $languageSwitchLink['language']; ?>"
-                    class="theme-button language-button"
-                    id="languageToggle"
-                    title="<?php pll_e('language_switcher_missing_translation'); ?>"
-                >
-                    <span id="languageLabel"><?php echo strtoupper($languageSwitchLink['language']); ?></span>
-                </button>
-                <?php
-            else:
-            ?>
-            <a href="<?php echo $languageSwitchLink['url']; ?>" lang="<?php echo $languageSwitchLink['language']; ?>"
-                class="theme-button language-button"
-                id="languageToggle"
-                title="<?php echo $languageSwitchLink['label']; ?>"
-            >
-                <span id="languageLabel"><?php echo strtoupper($languageSwitchLink['language']); ?></span>
-            </a>
-            <?php endif; ?>
-
-            <?php echo get_template_part('components/header_search'); ?>
-
-            <button
-                class="theme-button"
-                id="themeToggle"
-                type="button"
-                aria-label="<?php pll_e('Farbschema ändern'); ?>"
-                data-system="<?php pll_e('System'); ?>"
-                data-dark="<?php pll_e('Dunkel'); ?>"
-                data-light="<?php pll_e('Hell'); ?>"
-            >
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                        d="M12 3v2.1M12 18.9V21M3 12h2.1M18.9 12H21M5.6 5.6l1.5 1.5m9.8 9.8 1.5 1.5m0-12.8-1.5 1.5m-9.8 9.8-1.5 1.5"
-                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                    <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.7"/>
-                </svg>
-                <span id="themeLabel"><?php pll_e('System'); ?></span>
-            </button>
             <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-controls="mainNav"
                     aria-expanded="false" title="<?php pll_e('Menü öffnen'); ?>">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
             </button>
+
+            <?php echo get_template_part('components/header_search'); ?>
         </div>
     </header>
 

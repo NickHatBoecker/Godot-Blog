@@ -4,7 +4,7 @@ class LanguageSwitcher
 {
     public static function getLanguageSwitchLink(): array
     {
-        if (is_home()) {
+        if (is_front_page()) {
             $post = null;
             $otherLanguage = self::getOtherLanguage($post);
             $postUrl = pll_home_url($otherLanguage);
@@ -12,6 +12,22 @@ class LanguageSwitcher
             $post = null;
             $otherLanguage = self::getOtherLanguage($post);
             $postUrl = sprintf('%s?s=%s', pll_home_url($otherLanguage), sanitize_text_field(get_search_query() ?? ''));
+        } elseif (is_404()) {
+            $post = null;
+            $otherLanguage = self::getOtherLanguage($post);
+            $postUrl = '';
+        } elseif (is_home()) {
+            $post = get_post(get_option('page_for_posts'));
+            $otherLanguage = self::getOtherLanguage($post);
+            $postUrl = self::getOtherLanguagePostUrl($post);
+        } elseif (is_archive()) {
+            $post = null;
+            $otherLanguage = self::getOtherLanguage($post);
+            $postUrl = '';
+
+            if ($term = get_queried_object()) {
+                $postUrl = self::getOtherLanguageTermUrl($term);
+            }
         } else {
             wp_reset_query();
             $post = get_post();
@@ -56,5 +72,13 @@ class LanguageSwitcher
         if ($otherLanguageId === 0) return '';
 
         return get_permalink(get_post($otherLanguageId));
+    }
+
+    public static function getOtherLanguageTermUrl(WP_Term $term): string
+    {
+        $otherLanguageTermId = pll_get_term($term->term_id, self::getOtherLanguage(null));
+        if ($otherLanguageTermId === 0) return '';
+
+        return get_category_link($otherLanguageTermId);
     }
 }

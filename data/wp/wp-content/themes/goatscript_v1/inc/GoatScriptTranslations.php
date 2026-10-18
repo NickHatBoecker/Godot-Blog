@@ -30,6 +30,7 @@ class GoatScriptTranslations {
         pll_register_string('newest_posts_dateline', 'Lass dich inspirieren', self::TEXT_DOMAIN, false);
         pll_register_string('switch_to_language', 'switch_to_language', self::TEXT_DOMAIN, false);
         pll_register_string('go_to_post', 'Zum Beitrag', self::TEXT_DOMAIN, false);
+        pll_register_string('go_to_topic', 'Gehe zu allen Beiträge mit dem Thema', self::TEXT_DOMAIN, false);
         pll_register_string('reading_time', 'Lesezeit', self::TEXT_DOMAIN, false);
         pll_register_string('minute_short', 'min', self::TEXT_DOMAIN, false);
         pll_register_string('tags_headline', 'Schlagwörter', self::TEXT_DOMAIN, false);
@@ -38,8 +39,11 @@ class GoatScriptTranslations {
         pll_register_string('in_this_article', 'In diesem Beitrag', self::TEXT_DOMAIN, false);
         pll_register_string('next_up', 'Als Nächstes', self::TEXT_DOMAIN, false);
         pll_register_string('more_posts', 'Weitere Beiträge', self::TEXT_DOMAIN, false);
+        pll_register_string('more_topics', 'Weitere Themen', self::TEXT_DOMAIN, false);
         pll_register_string('all_posts', 'Alle Beiträge', self::TEXT_DOMAIN, false);
         pll_register_string('language_switcher_missing_translation', 'language_switcher_missing_translation', self::TEXT_DOMAIN, false);
+        pll_register_string('category', 'category', self::TEXT_DOMAIN, false);
+        pll_register_string('no_posts_in_this_category_yet', 'Hier gibt es noch nichts zu entdecken. Neue Beiträge sind bereits in Planung!', self::TEXT_DOMAIN, false);
 
         // Add (single post)
         pll_register_string('single_post_add_dateline', 'single_post_add_dateline', self::TEXT_DOMAIN, false);
