@@ -1,6 +1,9 @@
 <?php
-$category = get_the_category()[0] ?? null;
-$readTime = do_shortcode('[rt_reading_time]') ?? '';
+$categories = get_the_category();
+$category = null;
+if (count($categories) && ! in_array($categories[0]->term_id, [1, 7])) {
+    $category = $categories[0];
+}
 ?>
 
 <header class="article-intro" aria-labelledby="article-title">

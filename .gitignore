@@ -3,6 +3,11 @@
 /data/wp/*
 !/data/wp/wp-content
 /data/wp/wp-content/*
+
+!/data/wp/wp-content/plugins
+/data/wp/wp-content/plugins/*
+!/data/wp/wp-content/plugins/goatscript_infobox-block
+
 !/data/wp/wp-content/themes
 /data/wp/wp-content/themes/*
 !/data/wp/wp-content/themes/goatscript_v1

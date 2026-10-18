@@ -1,0 +1,54 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+:root {
+    --fg: #e8f0fb;
+    --accent-strong: #9bbfff;
+    --accent-soft: #1e355a;
+    --signal: #68d4ec;
+    --signal-soft: #173945;
+}
+
+.wp-block-goatscript-infobox-block {
+    margin: 32px 0;
+    padding: 19px 20px 20px 22px;
+    background: var(--signal-soft);
+    border-left: 3px solid var(--signal);
+    border-radius: 0 10px 10px 0;
+
+    strong {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--accent-strong);
+        font: 500 0.7rem/1 var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    p, div {
+        margin: 0;
+        color: var(--fg);
+        font-size: 0.94rem;
+        line-height: 1.65;
+    }
+
+    code {
+        padding: 2px 5px;
+        color: var(--accent-strong);
+        background: var(--accent-soft);
+        border-radius: 4px;
+    }
+
+    .components-text-control__input {
+        padding: 0;
+        background: transparent;
+        border: none;
+        margin-bottom: 7px;
+        color: var(--accent-strong);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "goatscript/infobox-block",
+    "version": "0.1.0",
+    "title": "Infobox",
+    "category": "text",
+    "icon": "admin-plugins",
+    "description": "This block displays an infobox",
+    "example": {},
+    "supports": {
+        "html": false
+    },
+    "textdomain": "infobox-block",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+        "content": {
+            "type": "string",
+            "source": "html",
+            "selector": ".infobox-content",
+            "default": ""
+        }
+    }
+}

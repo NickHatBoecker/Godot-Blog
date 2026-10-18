@@ -38,3 +38,10 @@ Domain Path: /languages
         border-color: var(--line) !important;
     }
 }
+
+.callout div {
+    margin: 0;
+    color: var(--fg);
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
