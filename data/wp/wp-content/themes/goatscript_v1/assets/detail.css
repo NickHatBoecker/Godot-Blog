@@ -26,7 +26,7 @@
 .article-body h2 { margin: 46px 0 15px; font: 600 clamp(1.65rem, 3vw, 2.3rem)/1.12 var(--display); letter-spacing: -0.05em; text-wrap: balance; }
 .article-body h3 { margin: 30px 0 10px; font: 600 1.25rem/1.2 var(--display); letter-spacing: -0.03em; }
 .article-body strong { font-weight: 700; }
-.article-body code, .callout code { padding: 2px 5px; color: var(--accent-strong); background: var(--accent-soft); border-radius: 4px; font: 500 0.85em/1.2 var(--mono); }
+.article-body code, .callout code { padding: 2px 5px; color: var(--accent-strong); background: var(--accent-soft); border-radius: 4px; font: 500 0.85em/1.2 var(--mono); white-space: nowrap; }
 .article-body ul, .article-body ol { margin: 0 0 25px; padding-left: 24px; }
 .article-body li { margin-bottom: 11px; padding-left: 6px; color: var(--fg); font-size: 1rem; line-height: 1.65; }
 .article-body li::marker { color: var(--accent); font-family: var(--mono); font-weight: 500; }
@@ -84,7 +84,12 @@ pre { margin: 0; padding-left: 17px; color: var(--fg); font: 0.78rem/2.1 var(--m
 .related-heading h2 { margin: 7px 0 0; font: 600 clamp(1.6rem, 3vw, 2.3rem)/1.1 var(--display); letter-spacing: -0.05em; }
 .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .related-card { display: flex; flex-direction: column; min-width: 0; min-height: 170px; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; text-decoration: none; transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease; }
-.related-card:hover { border-color: var(--accent); box-shadow: 0 9px 22px var(--shadow); transform: translateY(-2px); }
+.related-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 9px 22px var(--shadow);
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-in-out;
+}
 .related-card .eyebrow { font-size: 0.62rem; }
 .related-card h3 { margin: 14px 0 0; font: 600 1.02rem/1.2 var(--display); letter-spacing: -0.025em; text-wrap: balance; }
 .related-arrow { margin-top: auto; padding-top: 18px; color: var(--accent-strong); font: 500 0.67rem/1 var(--mono); }

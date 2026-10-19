@@ -22,14 +22,13 @@ class TableOfContents
 
     private static function collectHeadlines(DOMNodeList $nodes, array &$headlines): void
     {
-        foreach ($nodes as $node)
-        {
+        foreach ($nodes as $node) {
             /** @var DOMNode $node */
             if ($node->nodeName === 'h2' && $node->getAttribute('id')) {
                 $id = trim($node->getAttribute('id'));
                 $headlines[] = [
                     'url'      => sprintf('#%s', $id),
-                    'title'    => trim($node->textContent),
+                    'title'    => self::generateTitle($node->textContent),
                     'children' => [],
                 ];
             }
@@ -39,7 +38,7 @@ class TableOfContents
                 $id = trim($node->getAttribute('id'));
                 $headlines[count($headlines) - 1]['children'][] = [
                     'url'      => sprintf('#%s', $id),
-                    'title'    => trim($node->textContent),
+                    'title'    => self::generateTitle($node->textContent),
                     'children' => [],
                 ];
             }
@@ -48,5 +47,16 @@ class TableOfContents
                 self::collectHeadlines($node->childNodes, $headlines);
             }
         }
+    }
+
+    private static function generateTitle(string $title): string
+    {
+        $newTitle = trim($title);
+        if (preg_match('/^(\d\.).*/', $newTitle, $matches)) {
+            // Remove numbers from the title, because the table of contents will display them already.
+            $newTitle = str_replace($matches[1], '', $newTitle);
+        }
+
+        return $newTitle;
     }
 }

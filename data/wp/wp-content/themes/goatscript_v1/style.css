@@ -83,6 +83,7 @@ a {
     border-color: var(--accent);
     box-shadow: 0 10px 26px var(--shadow);
     transform: translateY(-2px);
+    transition: transform 0.2s ease-in-out;
 }
 
 .text-muted {
@@ -122,4 +123,20 @@ a {
             margin-bottom: 16px;
         }
     }
+}
+
+.wp-block-code {
+    padding: 0;
+
+    code {
+        padding: 16px;
+        margin-bottom: 16px;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        white-space: inherit;
+    }
+}
+
+h2.wp-block-heading {
+    color: var(--accent-strong);
 }
