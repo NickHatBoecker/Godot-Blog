@@ -69,9 +69,13 @@ pre { margin: 0; padding-left: 17px; color: var(--fg); font: 0.78rem/2.1 var(--m
 .side-card { padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 11px; }
 .side-card h2 { margin: 7px 0 15px; font: 600 1.25rem/1.1 var(--display); letter-spacing: -0.04em; }
 .toc { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-.toc a { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; color: var(--muted); font-size: 0.78rem; line-height: 1.4; text-decoration: none; }
-.toc a span { color: var(--accent); font: 500 0.67rem/1.6 var(--mono); }
-.toc a:hover { color: var(--accent-strong); }
+.toc > li > a { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; color: var(--muted); font-size: 0.78rem; line-height: 1.4; text-decoration: none; }
+.toc > li > ul > li { list-style-type: disclosure-open; }
+.toc > li > ul > li > a { color: white }
+.toc > li > ul > li::marker { color: var(--muted); font-size: 10px; }
+.toc li a { color: var(--muted); font-size: 0.78rem; line-height: 1.4; text-decoration: none; }
+.toc li a span { color: var(--accent); font: 500 0.67rem/1.6 var(--mono); }
+.toc li a:hover { color: var(--accent-strong); }
 .aside-note { background: var(--accent); border: 0; color: var(--surface-raised); }
 .aside-note .eyebrow, .aside-note h2 { color: var(--surface-raised); }
 .aside-note p { margin: 0; color: var(--surface-raised); opacity: 0.86; font-size: 0.83rem; line-height: 1.55; }
