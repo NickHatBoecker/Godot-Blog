@@ -13,7 +13,7 @@
                 'taxonomy'   => 'category',
                 'orderby'    => 'name',
                 'order'      => 'ASC',
-                'hide_empty' => false,
+                'hide_empty' => true,
                 'exclude'    => implode(',', GENERAL_CATEGORIES),
             ]);
             if (count($categories)):
@@ -27,9 +27,20 @@
                                 <h2><?php echo $category->name ?></h2>
                                 <?php if ($category->description): ?><span
                                     class="text-muted"><?php echo $category->description; ?></span><?php endif; ?>
+                                <div style="margin-top: 12px;">
+                                    <small>
+                                        <?php
+                                        if ($category->count === 1) {
+                                            pll_e('discover_num_article');
+                                        } else {
+                                            echo str_replace('%d', $category->count, pll__('discover_num_articles'));
+                                        }
+                                        ?>
+                                    </small>
+                                </div>
                             </div>
                             <div>
-                                <a href="<?php echo get_category_link($category); ?>" class="post-arrow wcag-link" aria-label="<?php echo sprintf('%s \'%s\'', pll__('Gehe zu allen Beiträge mit dem Thema'), $category->name); ?>">
+                                <a href="<?php echo get_category_link($category); ?>" class="post-arrow wcag-link" aria-label="<?php echo sprintf('%s \'%s\'', pll__('Gehe zu allen Beiträgen mit dem Thema'), $category->name); ?>">
                                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                         <path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8"
                                               stroke-linecap="round" stroke-linejoin="round"></path>
@@ -64,7 +75,7 @@
                                 <div class="eyebrow">#<?php echo $tag->name ?></div>
                             </div>
                             <div>
-                                <a href="<?php echo get_category_link($tag); ?>" class="post-arrow wcag-link" aria-label="<?php echo sprintf('%s \'%s\'', pll__('Gehe zu allen Beiträge mit dem Thema'), $category->name); ?>">
+                                <a href="<?php echo get_category_link($tag); ?>" class="post-arrow wcag-link" aria-label="<?php echo sprintf('%s \'%s\'', pll__('Gehe zu allen Beiträgen mit dem Thema'), $category->name); ?>">
                                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                         <path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8"
                                               stroke-linecap="round" stroke-linejoin="round"></path>

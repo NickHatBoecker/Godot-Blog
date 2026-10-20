@@ -7,7 +7,7 @@ if (count($categories) && !in_array($categories[0]->term_id, GENERAL_CATEGORIES)
 ?>
 <article class="post-card u-position-relative">
     <div class="post-meta">
-        <strong>12.06.2024</strong>
+        <strong><?php echo get_the_date(pll__('d.m.Y')); ?></strong>
         <?php if ($category) { echo sprintf('<span class="post-meta-detail">%s</span>', $category->name); } ?>
     </div>
     <div><h3><?php echo get_the_title(); ?></h3>

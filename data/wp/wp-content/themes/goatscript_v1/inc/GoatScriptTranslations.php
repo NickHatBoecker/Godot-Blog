@@ -4,6 +4,7 @@ class GoatScriptTranslations {
     public const string TEXT_DOMAIN = 'goatscript';
 
     public static function init(): void {
+        pll_register_string('d.m.Y', 'd.m.Y', self::TEXT_DOMAIN, false);
         pll_register_string('close', 'Schließen', self::TEXT_DOMAIN, false);
         pll_register_string('menu_open', 'Menü öffnen', self::TEXT_DOMAIN, false);
         pll_register_string('menu_close', 'Menü schließen', self::TEXT_DOMAIN, false);
@@ -30,7 +31,7 @@ class GoatScriptTranslations {
         pll_register_string('newest_posts_dateline', 'Lass dich inspirieren', self::TEXT_DOMAIN, false);
         pll_register_string('switch_to_language', 'switch_to_language', self::TEXT_DOMAIN, false);
         pll_register_string('go_to_post', 'Zum Beitrag', self::TEXT_DOMAIN, false);
-        pll_register_string('go_to_topic', 'Gehe zu allen Beiträge mit dem Thema', self::TEXT_DOMAIN, false);
+        pll_register_string('go_to_topic', 'Gehe zu allen Beiträgen mit dem Thema', self::TEXT_DOMAIN, false);
         pll_register_string('reading_time', 'Lesezeit', self::TEXT_DOMAIN, false);
         pll_register_string('minute_short', 'min', self::TEXT_DOMAIN, false);
         pll_register_string('tags_headline', 'Schlagwörter', self::TEXT_DOMAIN, false);
@@ -44,6 +45,9 @@ class GoatScriptTranslations {
         pll_register_string('language_switcher_missing_translation', 'language_switcher_missing_translation', self::TEXT_DOMAIN, false);
         pll_register_string('category', 'category', self::TEXT_DOMAIN, false);
         pll_register_string('no_posts_in_this_category_yet', 'Hier gibt es noch nichts zu entdecken. Neue Beiträge sind bereits in Planung!', self::TEXT_DOMAIN, false);
+        pll_register_string('discover_num_article', 'discover_num_article', self::TEXT_DOMAIN, false);
+        pll_register_string('discover_num_articles', 'discover_num_articles', self::TEXT_DOMAIN, false);
+        pll_register_string('tags_to_this_post', 'Schlagwörter zu diesem Beitrag', self::TEXT_DOMAIN, false);
 
         // Add (single post)
         pll_register_string('single_post_add_dateline', 'single_post_add_dateline', self::TEXT_DOMAIN, false);

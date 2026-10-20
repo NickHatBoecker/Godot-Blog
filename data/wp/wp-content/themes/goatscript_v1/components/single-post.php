@@ -26,10 +26,14 @@ if (count($categories) && ! in_array($categories[0]->term_id, GENERAL_CATEGORIES
             <?php the_content(''); ?>
 
             <?php
-            if ($tags = get_tags()) {
+            if ($tags = get_the_tags()) {
                 echo '<div class="tag-list" aria-label="'.pll__('Schlagwörter').'">';
                 foreach ($tags as $tag) {
-                    echo sprintf('<a class="tag" href="%s">#%s</a>', get_tag_link($tag), $tag->name);
+                    echo sprintf(
+                        '<a class="tag" href="%s" title="'.pll__('Gehe zu allen Beiträgen mit dem Thema').' %2$s">#%2$s</a>',
+                        get_tag_link($tag),
+                        $tag->name
+                    );
                 }
                 echo '</div>';
             }
