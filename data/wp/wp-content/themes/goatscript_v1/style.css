@@ -129,11 +129,12 @@ a {
     padding: 0;
 
     code {
-        padding: 16px;
+        padding: 24px 16px;
         margin-bottom: 16px;
         font-size: 0.8rem;
         line-height: 1.5;
         white-space: inherit;
+        overflow-x: auto;
     }
 }
 
