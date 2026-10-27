@@ -6,6 +6,7 @@
     <title><?php wp_title(); ?></title>
     <meta name="description" content="Ein zeitgemäßes GoatScript-Blog für praktische Godot-Engine-Beiträge.">
     <?php wp_head(); ?>
+    <link rel="icon" type="image/png" href="<?php echo get_theme_file_uri('assets/images/favicon.png'); ?>">
     <link href="<?php echo get_theme_file_uri('style.css'); ?>" rel="stylesheet">
 </head>
 <body>
