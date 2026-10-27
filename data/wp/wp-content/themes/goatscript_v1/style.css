@@ -141,3 +141,27 @@ a {
 h2.wp-block-heading {
     color: var(--accent-strong);
 }
+
+.pagination {
+    margin-top: 24px;
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .page-numbers:not(.current) {
+        text-decoration: none;
+        border-bottom: 1px solid var(--fg);
+
+        &:hover {
+            color: var(--accent-strong);
+            border-color: var(--accent-strong);
+        }
+    }
+
+    .page-numbers:not(.prev):not(.next) {
+        padding: 0 6px;
+    }
+}

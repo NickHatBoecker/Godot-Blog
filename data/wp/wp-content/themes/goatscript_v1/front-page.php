@@ -28,7 +28,6 @@
 
         <?php
         if (get_the_posts_pagination()) {
-            echo '<div class="post-list__separator mb-54"></div>';
             the_posts_pagination();
         }
         ?>
